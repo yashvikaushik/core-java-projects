@@ -70,7 +70,7 @@ Yashvi Kaushik
 Feel free to reach out for suggestions, questions, or collaboration!
 
 📧 yashvikaushik2525@gmail.com
-🔗 in/yashvi-kaushik
+🔗 https://www.linkedin.com/in/yashvi-kaushik/
 
 
 
