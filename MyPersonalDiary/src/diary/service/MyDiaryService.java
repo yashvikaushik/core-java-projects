@@ -15,8 +15,8 @@ public class MyDiaryService {
 
     }
 
-    public Note[] viewNotes(){
-        return myFileHandler.viewFileNotes();
+    public void viewNotes(){
+         myFileHandler.viewFileNotes();
     }
     public boolean appendNote(Note note){
         return myFileHandler.saveNoteToFile(note);
