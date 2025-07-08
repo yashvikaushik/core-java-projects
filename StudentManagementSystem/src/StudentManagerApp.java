@@ -44,7 +44,7 @@ public class StudentManagerApp {
                 break;
 
                 case 3:
-                System.out.println(studentManager.getAllStudent());
+                studentManager.getAllStudent();
                 break;
 
 
