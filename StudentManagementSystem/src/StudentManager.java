@@ -25,8 +25,8 @@ public class StudentManager {
 
     }
 
-    public Student[] getAllStudent(){
-        return studentFileHandler.loadStudents();
+    public void getAllStudent(){
+         studentFileHandler.loadStudents();
         //return student;
         //System.out.println(studentFileHandler.loadStudents());
     }
