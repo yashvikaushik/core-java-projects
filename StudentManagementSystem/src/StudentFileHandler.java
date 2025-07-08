@@ -24,11 +24,11 @@ public class StudentFileHandler {
 
     }
 
-    public Student[] loadStudents(){
+    public void loadStudents(){
 
         File files[]=folder.listFiles();
         if(files==null){
-            return null;
+            System.out.println("no file present");
         }
 
         //counting the number of text files
@@ -42,28 +42,38 @@ public class StudentFileHandler {
         student=new Student[count];
         int index=0;
         
-        try{
+        
 
-            for(File file:files){
-            
-                FileInputStream fin =new FileInputStream(file);
+            for(int i=0;i<count;i++){
+                if(files[i].getName().startsWith("."))
+                continue;
+                
+            else{
+                try{
+
+
+                FileInputStream fin =new FileInputStream(files[i]);
                 ObjectInputStream oin=new ObjectInputStream(fin);
                 Student stud=(Student)oin.readObject();
                 student[index]=stud;
                 index++;
                 fin.close();
                 oin.close();
-            }
-        }
-
-        catch(Exception e){
+                }
+                catch(Exception e){
             System.out.println(e);
         }
-        return student;
+            }
+        }
+        for(Student s:student){
+            System.out.println(s);
+        }
+        //return student;
+    }
 
         
        
-    }
+    
 
     public boolean deleteStudent(int id){
         File file=new File(folder,"student"+id+".txt");
