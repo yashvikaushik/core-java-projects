@@ -57,22 +57,25 @@ public class DiaryFileHandler {
 
     }
 
-    public Note[] viewFileNotes(){
+    public void viewFileNotes(){
         File file[] =folder.listFiles();
         if(file==null){
             System.out.println("no notes present");
-            return new Note[0];
+            //return new Note[0];
+            //System.out.println("no notes added so far");
 
         }
         
         int index=0;
-        //Note[] notes;
+
+        //array initialization was necessary bcz array works on size
+        Note[] notes=new Note[file.length];
         try{
         for(int i=0;i<file.length;i++){
             //File f=new File(folder,note.getDate()+".txt");
             if(file[i].getName().indexOf("DS_Store")!=-1)
             continue;
-            System.out.print("fileName:"+file[i].getName());
+            System.out.println("fileName:"+file[i].getName());
             FileInputStream fin=new FileInputStream(file[i]);
             ObjectInputStream oin=new ObjectInputStream(fin);
             Note obj=(Note)oin.readObject();
@@ -87,7 +90,11 @@ public class DiaryFileHandler {
         System.out.println(e);
 
     }  
-    return notes;      
+    
+    //return notes;  
+    for(Note note:notes){
+        System.out.println(note);
+    }    
 
     }
 
