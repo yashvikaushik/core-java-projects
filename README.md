@@ -45,4 +45,4 @@ This repository is a collection of **self-built Java console-based applications*
 
 🙋‍♀️ Author Yashvi Kaushik 📬 Contact Feel free to reach out for suggestions, questions, or collaboration!
 
-📧 yashvikaushik2525@gmail.com 🔗 in/yashvi-kaushik
+📧 yashvikaushik2525@gmail.com 🔗 https://www.linkedin.com/in/yashvi-kaushik/
