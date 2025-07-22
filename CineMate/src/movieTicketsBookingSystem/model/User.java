@@ -64,6 +64,10 @@ public void setRole(String role){
 this.role=role;
 }
 
+public String toString(){
+    return "user name: "+userName+" email: "+email+" password: "+password;
+}
+
 
     
 }
