@@ -72,7 +72,7 @@ public class LoginFrame extends JFrame {
 
                 User user = UserService.loginUser(email, password);
                 if (user != null) {
-                    JOptionPane.showMessageDialog(null, "Login successful! Welcome, " + user.getUserName());
+                   // JOptionPane.showMessageDialog(null, "Login successful! Welcome, " + user.getUserName());
 
                      new MovieSelectionFrame().setVisible(true);
             dispose(); 
