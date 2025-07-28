@@ -3,6 +3,7 @@ package movieTicketsBookingSystem.ui;
 import javax.swing.*;
 
 import movieTicketsBookingSystem.model.Movie;
+import movieTicketsBookingSystem.model.User;
 import movieTicketsBookingSystem.service.MovieService;
 
 import java.awt.*;
@@ -12,12 +13,13 @@ import java.util.Map;
 public class MovieSelectionFrame extends JFrame {
 
     private final int MAX_SEATS = 10; // Max seats to select
+    private User user;
 
-   
-private MovieService movieService = new MovieService();
+    private MovieService movieService = new MovieService();
     private Map<String, Movie> movies = new LinkedHashMap<String, Movie>();
 
-    public MovieSelectionFrame() {
+    public MovieSelectionFrame(User user) {
+        this.user = user;
         setTitle("Select a Movie");
         setSize(1000, 700);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -84,7 +86,7 @@ private MovieService movieService = new MovieService();
         // Select button
         JButton selectBtn = new JButton("Select");
         selectBtn.addActionListener(e -> {
-            new SeatSelectionFrame(movie.getTitle(), MAX_SEATS, this).setVisible(true);
+            new SeatSelectionFrame(user.getID(), movie.getID()).setVisible(true);
             this.setVisible(false);
         });
 
@@ -97,7 +99,7 @@ private MovieService movieService = new MovieService();
         return card;
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new MovieSelectionFrame().setVisible(true));
-    }
+    // public static void main(String[] args) {
+    //     SwingUtilities.invokeLater(() -> new MovieSelectionFrame().setVisible(true));
+    // }
 }
